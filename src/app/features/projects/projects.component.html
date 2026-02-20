@@ -1,0 +1,23 @@
+<article class="blog" [class.active]="active">
+  <header>
+    <h2 class="h2 article-title">{{ language.t('projects_title') }}</h2>
+  </header>
+
+  <section class="blog-posts">
+    <ul class="blog-posts-list">
+      <li class="blog-post-item" *ngFor="let project of content.content().keyProjects; index as i">
+        <a [href]="project.url || 'javascript:void(0)'">
+          <figure class="blog-banner-box"><img [src]="project.image" [alt]="project.title" loading="lazy" /></figure>
+          <div class="blog-content">
+            <div class="blog-meta"><p class="blog-category">{{ language.t('projects_title') }}</p></div>
+            <h3 class="h3 blog-item-title">{{ project.title }}</h3>
+            <p class="blog-text">{{ project.description }}</p>
+            <div class="project-metrics">
+              <span class="project-metric" *ngFor="let metric of projectMetrics(project, i)">{{ metric }}</span>
+            </div>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </section>
+</article>

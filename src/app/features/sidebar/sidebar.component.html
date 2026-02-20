@@ -1,0 +1,171 @@
+<aside class="sidebar" [class.active]="expanded()">
+  <span class="sidebar-accent"></span>
+  <div class="sidebar-info">
+    <figure class="avatar-box hero-avatar">
+      <img
+        [src]="content.content().profile.avatar"
+        [alt]="content.content().profile.name"
+        (error)="onAvatarError($event)"
+        width="80"
+      />
+    </figure>
+
+    <div class="info-content">
+      <h1 class="name" [title]="content.content().profile.name">
+        {{ content.content().profile.name }}
+      </h1>
+      <p class="title role-badge">
+        <ion-icon name="flash-outline"></ion-icon>
+        <span>{{ language.t("profile_title") }}</span>
+      </p>
+    </div>
+
+    <button class="info_more-btn" type="button" (click)="toggle()">
+      <span>{{ language.t("show_contacts") }}</span>
+      <ion-icon name="chevron-down"></ion-icon>
+    </button>
+  </div>
+
+  <div class="sidebar-info_more">
+    <div class="separator"></div>
+
+    <ul class="contacts-list">
+      <li class="contact-item contact-card">
+        <div class="icon-box"><ion-icon name="mail-outline"></ion-icon></div>
+        <div class="contact-info">
+          <p class="contact-title">{{ language.t("contact_email") }}</p>
+          <a
+            [href]="'mailto:' + content.content().profile.email"
+            class="contact-link email-link"
+            [title]="content.content().profile.email"
+            >{{ content.content().profile.email }}</a
+          >
+          <button
+            class="contact-copy-btn"
+            type="button"
+            (click)="copyToClipboard(content.content().profile.email, language.t('contact_email'))"
+          >
+            {{ language.t("copy_text") }}
+          </button>
+        </div>
+      </li>
+
+      <li class="contact-item contact-card">
+        <div class="icon-box">
+          <ion-icon name="phone-portrait-outline"></ion-icon>
+        </div>
+        <div class="contact-info">
+          <p class="contact-title">{{ language.t("contact_phone") }}</p>
+          <a
+            [href]="
+              'tel:' + content.content().profile.phone.replaceAll(' ', '')
+            "
+            class="contact-link"
+            >{{ content.content().profile.phone }}</a
+          >
+          <button
+            class="contact-copy-btn"
+            type="button"
+            (click)="copyToClipboard(content.content().profile.phone, language.t('contact_phone'))"
+          >
+            {{ language.t("copy_text") }}
+          </button>
+        </div>
+      </li>
+
+      <li class="contact-item contact-card">
+        <div class="icon-box">
+          <ion-icon name="calendar-outline"></ion-icon>
+        </div>
+        <div class="contact-info">
+          <p class="contact-title">{{ language.t("contact_experience") }}</p>
+          <time datetime="P4Y">{{ language.t("experience_value") }}</time>
+        </div>
+      </li>
+
+      <li class="contact-item contact-card">
+        <div class="icon-box">
+          <ion-icon name="briefcase-outline"></ion-icon>
+        </div>
+        <div class="contact-info">
+          <p class="contact-title">{{ language.t("contact_company") }}</p>
+          <p
+            class="contact-link"
+            [title]="language.t('company_value')"
+          >
+            {{ language.t("company_value") }}
+          </p>
+        </div>
+      </li>
+
+      <li class="contact-item contact-card">
+        <div class="icon-box">
+          <ion-icon name="location-outline"></ion-icon>
+        </div>
+        <div class="contact-info">
+          <p class="contact-title">{{ language.t("contact_location") }}</p>
+          <address>{{ language.t("location_value") }}</address>
+        </div>
+      </li>
+    </ul>
+
+    <p class="copy-toast" *ngIf="copiedLabel()">{{ copiedLabel() }}</p>
+
+    <div class="separator"></div>
+
+    <div class="resume-download-actions">
+      <button
+        type="button"
+        class="resume-download-btn"
+        (click)="downloadResume.emit()"
+      >
+        <ion-icon name="download-outline"></ion-icon>
+        {{ language.t("download_resume") }}
+      </button>
+      <button
+        type="button"
+        class="resume-download-btn coverLetter-download"
+        (click)="downloadCoverLetter.emit()"
+      >
+        <ion-icon name="document-text-outline"></ion-icon>
+        {{ language.t("download_cover_letter") }}
+      </button>
+    </div>
+
+    <ul class="social-list modern-social-list">
+      <li class="social-item">
+        <a
+          class="social-link social-pill"
+          [href]="content.content().profile.githubUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="GitHub"
+        >
+          <ion-icon name="logo-github"></ion-icon>
+        </a>
+      </li>
+      <li class="social-item">
+        <a
+          class="social-link social-pill"
+          [href]="content.content().profile.linkedinUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="LinkedIn"
+        >
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a>
+      </li>
+      <!-- <li class="social-item">
+        <a
+          class="social-link social-pill"
+          [href]="content.content().profile.leetcodeUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="LeetCode"
+        >
+          <ion-icon name="code-slash-outline"></ion-icon>
+        </a>
+      </li> -->
+    </ul>
+  </div>
+</aside>

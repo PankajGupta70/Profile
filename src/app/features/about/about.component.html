@@ -1,0 +1,52 @@
+<article class="about" [class.active]="active">
+  <header>
+    <h2 class="h2 article-title">{{ language.t('about_title') }}</h2>
+  </header>
+
+  <section class="about-text">
+    <p><strong>{{ language.t('about_p1') }}</strong></p>
+    <ul class="about-highlight-list">
+      <li>⚡ Performance optimization, micro-frontends, and NgRx</li>
+      <li>🌍 Platforms adopted across 140+ countries</li>
+      <li>👥 Supporting 2,000+ concurrent users</li>
+    </ul>
+    <p>{{ language.t('about_p2') }}</p>
+  </section>
+
+  <section class="service">
+    <h3 class="h3 service-title">{{ language.t('services_title') }}</h3>
+    <ul class="service-list">
+      <li class="service-item">
+        <div class="service-icon-box"><img src="assets/images/icon-design.svg" alt="icon" width="40" /></div>
+        <div class="service-content-box">
+          <h4 class="h4 service-item-title">{{ language.t('service_1_title') }}</h4>
+          <p class="service-item-text">{{ language.t('service_1_text') }}</p>
+        </div>
+      </li>
+
+      <li class="service-item">
+        <div class="service-icon-box"><img src="assets/images/icon-dev.svg" alt="icon" width="40" /></div>
+        <div class="service-content-box">
+          <h4 class="h4 service-item-title">{{ language.t('service_2_title') }}</h4>
+          <p class="service-item-text">{{ language.t('service_2_text') }}</p>
+        </div>
+      </li>
+
+      <li class="service-item">
+        <div class="service-icon-box"><img src="assets/images/icon-app.svg" alt="icon" width="40" /></div>
+        <div class="service-content-box">
+          <h4 class="h4 service-item-title">{{ language.t('service_3_title') }}</h4>
+          <p class="service-item-text">{{ language.t('service_3_text') }}</p>
+        </div>
+      </li>
+
+      <li class="service-item">
+        <div class="service-icon-box"><img src="assets/images/icon-photo.svg" alt="icon" width="40" /></div>
+        <div class="service-content-box">
+          <h4 class="h4 service-item-title">{{ language.t('service_4_title') }}</h4>
+          <p class="service-item-text">{{ language.t('service_4_text') }}</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+</article>

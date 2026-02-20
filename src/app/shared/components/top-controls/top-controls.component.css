@@ -1,0 +1,63 @@
+.app-tools {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-end;
+  width: min(100%, 520px);
+  margin-inline: auto;
+  margin-top: 64px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 3;
+}
+
+.app-tools label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--light-gray);
+  font-size: 13px;
+}
+
+.app-tools select {
+  background: var(--eerie-black-2);
+  border: 1px solid var(--jet);
+  color: var(--white-2);
+  border-radius: 8px;
+  padding: 6px 10px;
+}
+
+.admin-btn {
+  border: 1px solid var(--jet);
+  color: var(--white-2);
+  background: var(--eerie-black-2);
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 1023px) {
+  .app-tools {
+    margin-top: 0;
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width: 768px) {
+  .app-tools {
+    width: min(100%, 700px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .app-tools {
+    width: min(100%, 950px);
+  }
+}
+
+@media (min-width: 1250px) {
+  .app-tools {
+    width: 100%;
+  }
+}

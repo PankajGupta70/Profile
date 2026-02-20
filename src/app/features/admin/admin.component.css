@@ -1,0 +1,77 @@
+.d-none {
+  display: none;
+}
+
+.admin-panel {
+  display: none;
+  margin-bottom: 16px;
+}
+
+.admin-panel.active {
+  display: block;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.admin-close,
+.admin-logout,
+.admin-reset {
+  border: 1px solid var(--jet);
+  color: var(--white-2);
+  background: var(--eerie-black-1);
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.admin-actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.admin-login-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.section-gap {
+  margin-top: 18px;
+}
+
+.code-box {
+  min-height: 160px;
+  font-family: Consolas, 'Courier New', monospace;
+  margin-bottom: 10px;
+}
+
+.admin-upload {
+  display: grid;
+  gap: 6px;
+  color: var(--light-gray);
+  font-size: 13px;
+}
+
+.admin-upload input[type='file'] {
+  color: var(--white-2);
+}
+
+.admin-msg {
+  margin-top: 10px;
+  color: var(--light-gray);
+  font-size: 13px;
+}
+
+.admin-msg.error {
+  color: hsl(0, 70%, 65%);
+}
+
+.admin-msg.success {
+  color: hsl(130, 50%, 62%);
+}

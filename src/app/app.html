@@ -1,0 +1,18 @@
+<main>
+  <app-sidebar
+    (downloadResume)="downloadResume()"
+    (downloadCoverLetter)="downloadCoverLetter()"
+  ></app-sidebar>
+
+  <div class="main-content">
+    <app-top-controls (adminToggle)="toggleAdmin()"></app-top-controls>
+    <app-navbar [currentPage]="currentPage()" (pageChange)="setPage($event)"></app-navbar>
+    <app-admin [open]="adminOpen()" (close)="adminOpen.set(false)"></app-admin>
+
+    <app-about [active]="currentPage() === 'about'"></app-about>
+    <app-resume [active]="currentPage() === 'resume'"></app-resume>
+    <app-portfolio [active]="currentPage() === 'portfolio'"></app-portfolio>
+    <app-projects [active]="currentPage() === 'projects'"></app-projects>
+    <app-contact [active]="currentPage() === 'contact'"></app-contact>
+  </div>
+</main>

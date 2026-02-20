@@ -1,0 +1,43 @@
+<article class="portfolio" [class.active]="active">
+  <header>
+    <h2 class="h2 article-title">{{ language.t('portfolio_title') }}</h2>
+  </header>
+
+  <section class="projects">
+    <ul class="filter-list">
+      <li class="filter-item" *ngFor="let category of categories()">
+        <button [class.active]="selected() === category" (click)="setCategory(category)">{{ categoryLabel(category) }}</button>
+      </li>
+    </ul>
+
+    <div class="filter-select-box">
+      <button class="filter-select" type="button">
+        <div class="select-value">{{ categoryLabel(selected()) || language.t('select_category') }}</div>
+      </button>
+      <ul class="select-list">
+        <li class="select-item" *ngFor="let category of categories()">
+          <button (click)="setCategory(category)">{{ categoryLabel(category) }}</button>
+        </li>
+      </ul>
+    </div>
+
+    <ul class="project-list">
+      <li class="project-item active" *ngFor="let project of filtered()">
+        <a [href]="project.url || 'javascript:void(0)'">
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+              <span class="project-hover-cta">View Project</span>
+            </div>
+            <img [src]="project.image" [alt]="project.title" loading="lazy" />
+          </figure>
+          <h3 class="project-title">{{ project.title }}</h3>
+          <p class="project-category">{{ categoryLabel(project.category) }}</p>
+          <div class="project-tech-tags">
+            <span class="project-tag" *ngFor="let tag of projectTags(project)">{{ tag }}</span>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </section>
+</article>

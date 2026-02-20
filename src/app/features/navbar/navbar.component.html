@@ -1,0 +1,19 @@
+<nav class="navbar">
+  <ul class="navbar-list">
+    <li class="navbar-item">
+      <button class="navbar-link" [class.active]="currentPage === 'about'" (click)="setPage('about')">{{ language.t('nav_about') }}</button>
+    </li>
+    <li class="navbar-item">
+      <button class="navbar-link" [class.active]="currentPage === 'resume'" (click)="setPage('resume')">{{ language.t('nav_resume') }}</button>
+    </li>
+    <li class="navbar-item">
+      <button class="navbar-link" [class.active]="currentPage === 'portfolio'" (click)="setPage('portfolio')">{{ language.t('nav_portfolio') }}</button>
+    </li>
+    <li class="navbar-item">
+      <button class="navbar-link" [class.active]="currentPage === 'projects'" (click)="setPage('projects')">{{ language.t('nav_projects') }}</button>
+    </li>
+    <li class="navbar-item">
+      <button class="navbar-link" [class.active]="currentPage === 'contact'" (click)="setPage('contact')">{{ language.t('nav_contact') }}</button>
+    </li>
+  </ul>
+</nav>

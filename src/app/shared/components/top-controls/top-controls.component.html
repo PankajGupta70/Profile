@@ -1,0 +1,18 @@
+<div class="app-tools">
+  <label>
+    <span>{{ language.t('label_language_type') }}</span>
+    <select [ngModel]="language.selected()" (ngModelChange)="onLanguageChange($event)">
+      <option *ngFor="let option of language.options" [value]="option.code">{{ languageOptionLabel(option.code) }}</option>
+    </select>
+  </label>
+
+  <label>
+    <span>{{ language.t('label_theme') }}</span>
+    <select [ngModel]="theme.theme()" (ngModelChange)="onThemeChange($event)">
+      <option value="dark">{{ language.t('theme_dark') }}</option>
+      <option value="light">{{ language.t('theme_light') }}</option>
+    </select>
+  </label>
+
+  <button class="admin-btn" type="button" (click)="adminToggle.emit()">{{ language.t('admin_button') }}</button>
+</div>

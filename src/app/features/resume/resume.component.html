@@ -1,0 +1,50 @@
+﻿<article class="resume" [class.active]="active">
+  <header>
+    <h2 class="h2 article-title">{{ language.t('resume_title') }}</h2>
+  </header>
+  <section class="timeline">
+    <div class="title-wrapper">
+      <div class="icon-box"><ion-icon name="book-outline"></ion-icon></div>
+      <h3 class="h3">{{ language.t('education') }}</h3>
+    </div>
+    <ol class="timeline-list">
+      <li class="timeline-item">
+        <h4 class="h4 timeline-item-title">{{ language.t('edu_degree') }}</h4>
+        <span>{{ language.t('edu_year') }}</span>
+        <p class="timeline-text">{{ language.t('edu_school') }}</p>
+      </li>
+    </ol>
+  </section>
+
+  <section class="timeline">
+    <div class="title-wrapper">
+      <div class="icon-box"><ion-icon name="book-outline"></ion-icon></div>
+      <h3 class="h3">{{ language.t('experience') }}</h3>
+    </div>
+    <ol class="timeline-list">
+      <li class="timeline-item">
+        <h4 class="h4 timeline-item-title">{{ language.t('exp_role') }}</h4>
+        <span>{{ language.t('exp_year') }}</span>
+        <p class="timeline-text">{{ language.t('exp_text') }}</p>
+      </li>
+    </ol>
+  </section>
+
+  <section class="skill">
+    <h3 class="h3 skills-title">{{ language.t('core_skills') }}</h3>
+    <ul class="skills-list content-card">
+      <li class="skills-item" *ngFor="let skill of content.content().resumeSkills">
+        <div class="title-wrapper">
+          <h5 class="h5 skill-title-with-icon" [title]="skillHint(skill.key)">
+            <ion-icon [name]="skillIcon(skill.key)"></ion-icon>
+            <span>{{ skillLabel(skill.key) }}</span>
+          </h5>
+          <data [value]="skill.value">{{ skill.value }}%</data>
+        </div>
+        <div class="skill-progress-bg">
+          <div class="skill-progress-fill animated-fill" [style.width.%]="skill.value"></div>
+        </div>
+      </li>
+    </ul>
+  </section>
+</article>

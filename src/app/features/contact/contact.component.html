@@ -1,0 +1,44 @@
+<article class="contact" [class.active]="active">
+  <header>
+    <h2 class="h2 article-title">{{ language.t('contact_title') }}</h2>
+  </header>
+
+  <section class="mapbox">
+    <figure>
+      <iframe [src]="safeMapUrl()" width="400" height="300" loading="lazy"></iframe>
+    </figure>
+  </section>
+
+  <section class="contact-form">
+    <h3 class="h3 form-title">{{ language.t('contact_form') }}</h3>
+
+    <div class="quick-contact-grid">
+      <a class="quick-contact-card" [href]="'mailto:' + content.content().profile.email">
+        <ion-icon name="mail-outline"></ion-icon>
+        <span>{{ content.content().profile.email }}</span>
+      </a>
+      <a class="quick-contact-card" [href]="content.content().profile.linkedinUrl" target="_blank" rel="noopener noreferrer">
+        <ion-icon name="logo-linkedin"></ion-icon>
+        <span>LinkedIn</span>
+      </a>
+      <a class="quick-contact-card" [href]="content.content().profile.githubUrl" target="_blank" rel="noopener noreferrer">
+        <ion-icon name="logo-github"></ion-icon>
+        <span>GitHub</span>
+      </a>
+    </div>
+
+    <form #contactForm="ngForm" class="form" novalidate (ngSubmit)="onSubmit(contactForm)">
+      <div class="input-wrapper">
+        <input type="text" name="fullname" class="form-input" [placeholder]="language.t('placeholder_name')" required [(ngModel)]="formModel.fullname" />
+        <input type="email" name="email" class="form-input" [placeholder]="language.t('placeholder_email')" required [(ngModel)]="formModel.email" email />
+      </div>
+
+      <textarea name="message" class="form-input" [placeholder]="language.t('placeholder_message')" required [(ngModel)]="formModel.message"></textarea>
+
+      <button class="form-btn" type="submit" [disabled]="!contactForm.valid">
+        <ion-icon name="paper-plane"></ion-icon>
+        <span>{{ language.t('send_message') }}</span>
+      </button>
+    </form>
+  </section>
+</article>

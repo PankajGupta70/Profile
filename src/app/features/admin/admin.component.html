@@ -1,0 +1,102 @@
+<article class="admin-panel" [class.active]="open">
+  <header class="admin-header">
+    <h2 class="h2 article-title">Admin Panel</h2>
+  </header>
+
+  <section *ngIf="!admin.loggedIn()" class="admin-login">
+    <h3 class="h3">Login</h3>
+    <div class="input-wrapper">
+      <input
+        class="form-input"
+        type="password"
+        [(ngModel)]="password"
+        placeholder="Enter admin password"
+      />
+    </div>
+    <div class="admin-login-actions">
+      <button type="button" class="form-btn" (click)="login()">
+        <span>Login</span>
+      </button>
+      <button type="button" class="admin-close" (click)="close.emit()">Close</button>
+    </div>
+    <p class="admin-msg error" *ngIf="loginError">{{ loginError }}</p>
+    <p class="admin-msg d-none">Default password: <code>{{ admin.password() }}</code></p>
+  </section>
+
+  <section *ngIf="admin.loggedIn()" class="admin-body">
+    <div class="admin-actions">
+      <button type="button" class="admin-logout" (click)="logout()">Logout</button>
+      <button type="button" class="admin-reset" (click)="resetAll()">Reset Defaults</button>
+    </div>
+
+    <h3 class="h3">Profile</h3>
+    <div class="input-wrapper">
+      <input class="form-input" [(ngModel)]="profile.name" placeholder="Name" />
+      <input class="form-input" [(ngModel)]="roleText" placeholder="Role text for selected language" />
+      <input class="form-input" [(ngModel)]="profile.avatar" placeholder="Avatar image path/url" />
+      <input class="form-input" [(ngModel)]="profile.email" placeholder="Email" />
+      <input class="form-input" [(ngModel)]="profile.phone" placeholder="Phone" />
+      <input class="form-input" [(ngModel)]="profile.experience" placeholder="Experience text" />
+      <input class="form-input" [(ngModel)]="profile.currentCompany" placeholder="Current company" />
+      <input class="form-input" [(ngModel)]="profile.location" placeholder="Location text" />
+      <input class="form-input" [(ngModel)]="profile.resumePdfUrl" placeholder="Resume PDF link (assets/documents/resume-cover_letter/Pankaj_Gupta_Senior_Angular_Frontend_Developer_CV.pdf)" />
+      <input class="form-input" [(ngModel)]="profile.resumeDocxUrl" placeholder="Resume DOCX link (assets/documents/resume-cover_letter/Pankaj_Gupta_Senior_Angular_Frontend_Developer_Cover_letter.pdf)" />
+      <input class="form-input" [(ngModel)]="profile.coverLetterPdfUrl" placeholder="Cover letter PDF link (assets/documents/resume-cover_letter/Pankaj_Gupta_Senior_Angular_Frontend_Developer_Cover_letter.pdf)" />
+      <input class="form-input" [(ngModel)]="profile.coverLetterDocxUrl" placeholder="Cover letter DOCX link (assets/documents/resume-cover_letter/Pankaj_Gupta_Senior_Angular_Frontend_Developer_Cover_letter.pdf)" />
+    </div>
+    <div class="input-wrapper">
+      <label class="admin-upload">
+        <span>Upload Resume PDF</span>
+        <input type="file" accept=".pdf,application/pdf" (change)="onDocumentSelected($event, 'resumePdfUrl')" />
+      </label>
+      <label class="admin-upload">
+        <span>Upload Resume DOCX</span>
+        <input type="file" accept=".doc,.docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document" (change)="onDocumentSelected($event, 'resumeDocxUrl')" />
+      </label>
+      <label class="admin-upload">
+        <span>Upload Cover Letter PDF</span>
+        <input type="file" accept=".pdf,application/pdf" (change)="onDocumentSelected($event, 'coverLetterPdfUrl')" />
+      </label>
+      <label class="admin-upload">
+        <span>Upload Cover Letter DOCX</span>
+        <input type="file" accept=".doc,.docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document" (change)="onDocumentSelected($event, 'coverLetterDocxUrl')" />
+      </label>
+    </div>
+    <div class="admin-actions">
+      <button type="button" class="form-btn" (click)="saveProfile()"><span>Save Profile</span></button>
+      <button type="button" class="form-btn" (click)="saveRole()"><span>Save Role</span></button>
+    </div>
+
+    <h3 class="h3 section-gap">Admin Password</h3>
+    <div class="input-wrapper">
+      <input class="form-input" [(ngModel)]="newPassword" placeholder="Set new admin password" />
+    </div>
+    <button type="button" class="form-btn" (click)="savePassword()"><span>Update Password</span></button>
+
+    <h3 class="h3 section-gap">Contact Config</h3>
+    <div class="input-wrapper">
+      <input class="form-input" [(ngModel)]="contact.recipientEmail" placeholder="Recipient email for contact form" />
+      <input class="form-input" [(ngModel)]="contact.mapEmbedUrl" placeholder="Google map embed URL" />
+    </div>
+    <button type="button" class="form-btn" (click)="saveContact()"><span>Save Contact</span></button>
+
+    <h3 class="h3 section-gap">Resume Skills JSON</h3>
+    <textarea class="form-input code-box" rows="8" [(ngModel)]="skillsJson"></textarea>
+    <button type="button" class="form-btn" (click)="saveSkills()"><span>Save Skills</span></button>
+
+    <h3 class="h3 section-gap">Portfolio JSON</h3>
+    <textarea class="form-input code-box" rows="8" [(ngModel)]="portfolioJson"></textarea>
+    <button type="button" class="form-btn" (click)="savePortfolio()"><span>Save Portfolio</span></button>
+
+    <h3 class="h3 section-gap">Key Projects JSON</h3>
+    <textarea class="form-input code-box" rows="8" [(ngModel)]="keyProjectsJson"></textarea>
+    <button type="button" class="form-btn" (click)="saveKeyProjects()"><span>Save Key Projects</span></button>
+
+    <h3 class="h3 section-gap">Translations JSON ({{ activeLanguage().toUpperCase() }})</h3>
+    <textarea class="form-input code-box" rows="12" [(ngModel)]="translationJson"></textarea>
+    <button type="button" class="form-btn" (click)="saveTranslations()"><span>Save Translations</span></button>
+
+    <p class="admin-msg error" *ngIf="loginError">{{ loginError }}</p>
+    <p class="admin-msg success" *ngIf="statusMessage">{{ statusMessage }}</p>
+  </section>
+</article>
