@@ -1,0 +1,5 @@
+﻿Replace these placeholders with real files:
+- Pankaj_Gupta_Senior_Angular_Frontend_Developer_CV.pdf
+- resume.docx
+- Pankaj_Gupta_Senior_Angular_Frontend_Developer_Cover_letter.pdf
+- Pankaj_Gupta_Senior_Angular_Frontend_Developer_Cover_letter.pdf
