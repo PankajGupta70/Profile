@@ -7,11 +7,25 @@
     <ul class="blog-posts-list">
       <li class="blog-post-item" *ngFor="let project of content.content().keyProjects; index as i">
         <a [href]="project.url || 'javascript:void(0)'">
-          <figure class="blog-banner-box"><img [src]="project.image" [alt]="project.title" loading="lazy" /></figure>
+          <figure class="blog-banner-box project-flip-card">
+            <div class="project-flip-inner">
+              <div class="project-flip-face project-flip-front">
+                <img [src]="project.image" [alt]="project.title" loading="lazy" />
+              </div>
+              <figcaption class="project-flip-face project-flip-back">
+                <p class="project-flip-label">Project details</p>
+                <p class="project-flip-description">{{ project.description }}</p>
+              </figcaption>
+            </div>
+          </figure>
           <div class="blog-content">
             <div class="blog-meta"><p class="blog-category">{{ language.t('projects_title') }}</p></div>
             <h3 class="h3 blog-item-title">{{ project.title }}</h3>
-            <p class="blog-text">{{ project.description }}</p>
+            <p class="blog-text">{{ project.overview }}</p>
+            <div class="project-tech-stack">
+              <span>Tech Stack</span>
+              <p>{{ project.technology_stack }}</p>
+            </div>
             <div class="project-metrics">
               <span class="project-metric" *ngFor="let metric of projectMetrics(project, i)">{{ metric }}</span>
             </div>

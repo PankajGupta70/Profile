@@ -46,15 +46,27 @@ export class SiteContentService {
     keyProjects: [
       {
         title: 'ATITHI - CBIC (Government of India)',
-        description: 'Developed secure dynamic forms and complex validations for customs workflows with responsive UI and API integrations.',
-        metrics: ['2000+ concurrent users', '35% faster page load', 'High-security workflows'],
-        image: 'assets/images/blog-1.jpg'
+        overview: "A national customs declaration platform for international travelers, built for secure, high-volume digital submissions.",
+        description: "Developed scalable Angular-based user interfaces with complex workflows, implemented efficient state and data handling using RxJS, and integrated secure REST APIs. Focused on performance optimization through modular architecture, lazy loading, and optimized change detection while ensuring high security and reliability.",
+        metrics: [
+          "2000+ users",
+          "30% faster",
+          "National rollout"
+        ],
+        image: 'assets/images/blog-1.jpg',
+        technology_stack: 'Angular 18, TypeScript, RxJS, Reactive Forms, SCSS, REST APIs'
       },
       {
         title: 'Digital Passport System (DPS) - Hitachi Energy',
-        description: 'Built reusable Angular components, implemented NgRx state management, and enabled multilingual and RTL support for global adoption.',
-        metrics: ['140+ countries', 'WCAG 2.1 compliance', 'Angular modernization'],
-        image: 'assets/images/blog-2.jpg'
+        overview: "A global enterprise platform for real-time product lifecycle and quality data across multilingual regional teams.",
+        description: "Built scalable Angular-based enterprise dashboards with complex data-driven workflows, implemented state management using NgRx and RxJS, and integrated REST APIs for real-time data processing. Enhanced performance using modular architecture, lazy loading, and optimized rendering for global users.",
+        metrics: [
+          "140+ countries",
+          "Scalable UI",
+          "Enterprise workflows"
+        ],
+        image: 'assets/images/blog-2.jpg',
+        technology_stack: "Angular 7–15, TypeScript, NgRx, RxJS, Angular Material, SCSS"
       }
     ],
     contact: {

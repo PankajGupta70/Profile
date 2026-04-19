@@ -18,10 +18,12 @@ export interface PortfolioItem {
 
 export interface KeyProjectItem {
   title: string;
+  overview: string;
   description: string;
   metrics?: string[];
   image: string;
   url?: string;
+  technology_stack: string;
 }
 
 export interface SiteProfile {
