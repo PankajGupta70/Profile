@@ -28,7 +28,7 @@ export class ResumeComponent {
   }
 
   skillHint(key: string): string {
-    if (key === 'skill_1') return 'Angular: 4+ years';
+    if (key === 'skill_1') return 'Angular: 5 years';
     if (key === 'skill_2') return 'TypeScript & JS: enterprise usage';
     if (key === 'skill_3') return 'RxJS and NgRx: production state flow';
     return 'Performance and quality engineering';

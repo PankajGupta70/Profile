@@ -11,8 +11,8 @@ export class SiteContentService {
       avatar: 'assets/images/pankaj-avatar.png',
       email: 'pankajgupta403104@gmail.com',
       phone: '+91 8929402435',
-      experience: '4+ Years',
-      location: 'Bengaluru, India (Open to Relocation)',
+      experience: '5 Years',
+      location: 'Delhi, India (Open to Relocation)',
       currentCompany: 'Tata Consultancy Services (TCS)',
       resumePdfUrl: 'assets/documents/resume-cover_letter/Pankaj_Gupta_Senior_Angular_Frontend_Developer_CV.pdf',
       resumeDocxUrl: 'assets/documents/resume-cover_letter/Pankaj_Gupta_Senior_Angular_Frontend_Developer_CV.docx',
@@ -29,14 +29,18 @@ export class SiteContentService {
       { key: 'skill_4', value: 88 }
     ],
     portfolioItems: [
+      { title: 'Assessment 1', image: 'assets/images/project-7.png', category: 'web development',
+        url: 'https://pankajgupta70.github.io/UnStop/', tags: ['Angular', 'NgRx', 'Performance', 'Responsive'] },
+
+
       { title: 'Finance', image: 'assets/images/project-1.jpg', category: 'web development', tags: ['Angular', 'NgRx', 'REST API'] },
-      { title: 'Orizon', image: 'assets/images/project-2.png', category: 'web development', tags: ['TypeScript', 'SCSS', 'RxJS'] },
-      { title: 'Fundo', image: 'assets/images/project-3.jpg', category: 'web design', tags: ['UI/UX', 'Figma', 'Responsive'] },
-      { title: 'Brawlhalla', image: 'assets/images/project-4.png', category: 'applications', tags: ['Angular', 'PWA', 'i18n'] },
-      { title: 'DSM.', image: 'assets/images/project-5.png', category: 'web design', tags: ['Design System', 'Accessibility'] },
-      { title: 'MetaSpark', image: 'assets/images/project-6.png', category: 'web design', tags: ['SASS', 'Component UI'] },
-      { title: 'Summary', image: 'assets/images/project-7.png', category: 'web development', tags: ['Angular', 'Performance'] },
-      { title: 'Task Manager', image: 'assets/images/project-8.jpg', category: 'applications', tags: ['State Mgmt', 'REST API'] },
+      // { title: 'Orizon', image: 'assets/images/project-2.png', category: 'web development', tags: ['TypeScript', 'SCSS', 'RxJS'] },
+      // { title: 'Fundo', image: 'assets/images/project-3.jpg', category: 'web design', tags: ['UI/UX', 'Figma', 'Responsive'] },
+      // { title: 'Brawlhalla', image: 'assets/images/project-4.png', category: 'applications', tags: ['Angular', 'PWA', 'i18n'] },
+      // { title: 'DSM.', image: 'assets/images/project-5.png', category: 'web design', tags: ['Design System', 'Accessibility'] },
+      // { title: 'MetaSpark', image: 'assets/images/project-6.png', category: 'web design', tags: ['SASS', 'Component UI'] },
+      // { title: 'Summary', image: 'assets/images/project-7.png', category: 'web development', tags: ['Angular', 'Performance'] },
+      // { title: 'Task Manager', image: 'assets/images/project-8.jpg', category: 'applications', tags: ['State Mgmt', 'REST API'] },
       { title: 'Arrival', image: 'assets/images/project-9.png', category: 'web development', tags: ['Micro Frontends', 'Webpack'] }
     ],
     keyProjects: [
@@ -55,7 +59,7 @@ export class SiteContentService {
     ],
     contact: {
       recipientEmail: 'pankajgupta403104@gmail.com',
-      mapEmbedUrl: 'https://www.google.com/maps?q=Bengaluru%2C%20India&output=embed'
+      mapEmbedUrl: 'https://www.google.com/maps?q=Delhi%2C%20India&output=embed'
     }
   };
 

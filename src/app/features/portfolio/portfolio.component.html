@@ -23,7 +23,7 @@
 
     <ul class="project-list">
       <li class="project-item active" *ngFor="let project of filtered()">
-        <a [href]="project.url || 'javascript:void(0)'">
+        <a [href]="project.url || 'javascript:void(0)'" target="_blank" rel="noopener">
           <figure class="project-img">
             <div class="project-item-icon-box">
               <ion-icon name="eye-outline"></ion-icon>
