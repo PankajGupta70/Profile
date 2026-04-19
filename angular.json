@@ -28,7 +28,17 @@
                 "output": "assets"
               }
             ],
-            "styles": ["src/styles.css"]
+            "styles": ["src/styles.css"],
+            "allowedCommonJsDependencies": [
+              "canvg",
+              "core-js",
+              "jspdf",
+              "canvg",
+              "raf",
+              "rgbcolor",
+              "html2canvas",
+              "dompurify"
+            ]
           },
           "configurations": {
             "production": {
