@@ -1452,6 +1452,7 @@ main {
 }
 
 .blog-post-item > a {
+  cursor: auto;
   position: relative;
   background: var(--border-gradient-onyx);
   height: 100%;
@@ -1459,6 +1460,10 @@ main {
   border-radius: 16px;
   z-index: 1;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-post-item > a > figure {
+  cursor: pointer;
 }
 
 .blog-post-item > a::before {
