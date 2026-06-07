@@ -48,24 +48,34 @@ export class SiteContentService {
         title: 'ATITHI - CBIC (Government of India)',
         overview: "A national customs declaration platform for international travelers, built for secure, high-volume digital submissions.",
         description: "Developed scalable Angular-based user interfaces with complex workflows, implemented efficient state and data handling using RxJS, and integrated secure REST APIs. Focused on performance optimization through modular architecture, lazy loading, and optimized change detection while ensuring high security and reliability.",
+        caseStudy: {
+          problem: 'Customs declaration needed secure digital forms with strict validations.',
+          role: 'Built Angular forms, workflow screens, validations, and REST API integration.',
+          impact: 'Supported national rollout with faster submissions and high-volume usage.'
+        },
         metrics: [
           "2000+ users",
           "30% faster",
           "National rollout"
         ],
-        image: 'assets/images/blog-1.jpg',
+        image: 'assets/images/blog-1.png',
         technology_stack: 'Angular 18, TypeScript, RxJS, Reactive Forms, SCSS, REST APIs'
       },
       {
         title: 'Digital Passport System (DPS) - Hitachi Energy',
         overview: "A global enterprise platform for real-time product lifecycle and quality data across multilingual regional teams.",
         description: "Built scalable Angular-based enterprise dashboards with complex data-driven workflows, implemented state management using NgRx and RxJS, and integrated REST APIs for real-time data processing. Enhanced performance using modular architecture, lazy loading, and optimized rendering for global users.",
+        caseStudy: {
+          problem: 'Product data workflows needed one global, multilingual dashboard.',
+          role: 'Built reusable Angular components, NgRx flows, and API-driven views.',
+          impact: 'Supported 140+ countries with scalable, consistent enterprise UX.'
+        },
         metrics: [
           "140+ countries",
           "Scalable UI",
           "Enterprise workflows"
         ],
-        image: 'assets/images/blog-2.jpg',
+        image: 'assets/images/blog-2.png',
         technology_stack: "Angular 7–15, TypeScript, NgRx, RxJS, Angular Material, SCSS"
       }
     ],

@@ -20,6 +20,11 @@ export interface KeyProjectItem {
   title: string;
   overview: string;
   description: string;
+  caseStudy?: {
+    problem: string;
+    role: string;
+    impact: string;
+  };
   metrics?: string[];
   image: string;
   url?: string;

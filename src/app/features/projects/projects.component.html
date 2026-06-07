@@ -13,8 +13,13 @@
                 <img [src]="project.image" [alt]="project.title" loading="lazy" />
               </div>
               <figcaption class="project-flip-face project-flip-back">
-                <p class="project-flip-label">Project details</p>
-                <p class="project-flip-description">{{ project.description }}</p>
+                <p class="project-flip-label">Case study</p>
+                <dl class="project-case-study">
+                  <div class="project-case-study-row" *ngFor="let detail of caseStudyDetails(project, i)">
+                    <dt>{{ detail.label }}</dt>
+                    <dd>{{ detail.text }}</dd>
+                  </div>
+                </dl>
               </figcaption>
             </div>
           </figure>
